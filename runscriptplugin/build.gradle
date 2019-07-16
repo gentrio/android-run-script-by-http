@@ -12,6 +12,8 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "org.java-websocket:Java-WebSocket:1.4.0"
+    implementation "org.slf4j:slf4j-simple:1.7.25"
 }
 
 compileKotlin {
@@ -22,6 +24,7 @@ compileTestKotlin {
 }
 intellij {
     version '2018.3.6'
+    intellij.updateSinceUntilBuild false
 }
 patchPluginXml {
     changeNotes """

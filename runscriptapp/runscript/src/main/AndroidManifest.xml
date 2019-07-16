@@ -1,2 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.gentrio.runscript"/>
+          package="com.gentrio.runscript">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:usesCleartextTraffic="true">
+        <service android:name=".SocketService">
+            <intent-filter>
+                <data android:scheme="gentrio"
+                      android:host="runscript"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>
