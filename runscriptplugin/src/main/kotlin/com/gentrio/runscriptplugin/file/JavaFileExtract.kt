@@ -29,23 +29,23 @@ class JavaFileExtract(private val project: Project, val file: VirtualFile?) {
 
     private fun scriptExtract(javaFile: PsiJavaFile): String? {
         var script: String? = null
-        val importState = javaFile.importList?.allImportStatements?.joinToString("\n") {
+        val importState = javaFile.importList?.allImportStatements?.joinToString("") {
             it.text
         } ?: ""
         val bodyState = javaFile.classes.filter { psiClass ->
             psiClass.annotations.any {
                 Constants.CLASS_ANNOTATION == it.text
             }
-        }.joinToString("\n") { psiClass ->
+        }.joinToString("") { psiClass ->
             psiClass.allMethods.filter { psiMethod ->
                 psiMethod.annotations.any {
                     Constants.METHOD_ANNOTATION == it.text
                 }
             }.map { psiMethod ->
-                psiMethod.body?.statements?.joinToString("\n") { psiStatement ->
+                psiMethod.body?.statements?.joinToString("") { psiStatement ->
                     psiStatement.text.replace("@Override", "")
                 }
-            }.joinToString("\n")
+            }.joinToString("")
         }
 
         if (bodyState.isNotEmpty()) {

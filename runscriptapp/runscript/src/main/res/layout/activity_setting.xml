@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/outside"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+            android:clickable="true"
+            android:background="@android:color/white"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content">
+        <EditText
+                android:id="@+id/edit"
+                android:hint="ws://host:port?parameter"
+                android:textColor="#454545"
+                android:textColorHint="#888888"
+                android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <Button
+                android:id="@+id/button"
+                android:text="连接"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:background="#04be02"
+                android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</FrameLayout>

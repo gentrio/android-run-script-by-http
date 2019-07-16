@@ -13,7 +13,9 @@ class SocketListener: WebSocketListener() {
 
     override fun onClosed(webSocket: WebSocket, code: Int, reason: String) {
         super.onClosed(webSocket, code, reason)
-        SocketClient.connectionState = ConnectionState.CLOSE
+        AppExecutors.instance.mainThread().execute {
+            SocketClient.connectionState.value = ConnectionState.CLOSE
+        }
     }
 
     override fun onClosing(webSocket: WebSocket, code: Int, reason: String) {
@@ -22,13 +24,14 @@ class SocketListener: WebSocketListener() {
 
     override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
         super.onFailure(webSocket, t, response)
-        SocketClient.connectionState = ConnectionState.FAILED
+        AppExecutors.instance.mainThread().execute{
+            SocketClient.connectionState.value = ConnectionState.FAILED
+        }
     }
 
     override fun onMessage(webSocket: WebSocket, text: String) {
         super.onMessage(webSocket, text)
-        val result = JavaExecutor.execute(text)
-        SocketClient.sendMessage(result)
+        JavaExecutor.execute(text)
     }
 
     override fun onMessage(webSocket: WebSocket, bytes: ByteString) {
@@ -37,6 +40,8 @@ class SocketListener: WebSocketListener() {
 
     override fun onOpen(webSocket: WebSocket, response: Response) {
         super.onOpen(webSocket, response)
-        SocketClient.connectionState = ConnectionState.OPEN
+        AppExecutors.instance.mainThread().execute {
+            SocketClient.connectionState.value = ConnectionState.OPEN
+        }
     }
 }

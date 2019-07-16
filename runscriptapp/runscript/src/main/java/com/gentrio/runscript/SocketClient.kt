@@ -1,6 +1,7 @@
 package com.gentrio.runscript
 
 import android.os.Build
+import androidx.lifecycle.MutableLiveData
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.WebSocket
@@ -15,12 +16,18 @@ object SocketClient {
 
     var webSocket: WebSocket? = null
 
-    var connectionState: ConnectionState = ConnectionState.CLOSE
+    var connectionState: MutableLiveData<ConnectionState> = MutableLiveData()
+
+    init {
+        connectionState.value = ConnectionState.CLOSE
+    }
 
     fun startWebSocket(url: String) {
-        if (webSocket != null && connectionState == ConnectionState.OPEN) {
+        if (webSocket != null && connectionState.value == ConnectionState.OPEN) {
             return
         }
+
+        RunScriptPrefs.instance?.setUrl(url)
         val request = Request.Builder().url(url).addHeader("Device", "${Build.BRAND} ${Build.MODEL} API ${Build.VERSION.SDK_INT}").build()
         webSocket = okHttpClient.newWebSocket(request, SocketListener())
     }
@@ -31,7 +38,7 @@ object SocketClient {
 
     fun closeWebSocket() {
         webSocket?.close(88, "bye bye")
-        connectionState = ConnectionState.CLOSE
+        connectionState.value = ConnectionState.CLOSE
         webSocket = null
     }
 }
