@@ -18,14 +18,17 @@
         <!-- Add your extensions here -->
     </extensions>
 
-    <project-components>
+    <application-components>
         <component>
             <implementation-class>com.gentrio.runscriptplugin.websoket.WebSocketService</implementation-class>
         </component>
-    </project-components>
+    </application-components>
 
     <actions>
         <!-- Add your actions here -->
+        <action
+                id="DeviceAction"
+                class="com.gentrio.runscriptplugin.action.DeviceComboAction"/>
         <action
                 id="RunScriptAction"
                 text="RunScript"
@@ -33,6 +36,7 @@
                 class="com.gentrio.runscriptplugin.action.RunScriptAction"/>
         <group id="RunScriptToolBar" text="RunScript Toolbar Actions">
             <separator/>
+            <reference ref="DeviceAction"/>
             <reference ref="RunScriptAction"/>
             <separator/>
             <add-to-group group-id="MainToolBar" anchor="last"/>

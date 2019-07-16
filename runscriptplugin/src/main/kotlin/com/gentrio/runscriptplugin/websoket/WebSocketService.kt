@@ -2,20 +2,23 @@ package com.gentrio.runscriptplugin.websoket
 
 import com.gentrio.runscriptplugin.Constants
 import com.gentrio.runscriptplugin.util.executeOnPooledThread
+import com.intellij.openapi.components.ApplicationComponent
 import com.intellij.openapi.components.ProjectComponent
 import org.java_websocket.WebSocket
 import org.java_websocket.server.WebSocketServer
+import java.lang.Exception
 import java.net.InetSocketAddress
 
 /**
  * author: gentrio
  * created on: 2019-07-15
  */
-class WebSocketService: ProjectComponent{
+class WebSocketService: ApplicationComponent{
 
     companion object{
-        var socketServer: WebSocketServer? = null
         val socketMap = HashMap<WebSocket, String>()
+        var socketServer: WebSocketServer? = null
+        var selectedSocket: WebSocket? = null
     }
 
 
@@ -31,4 +34,6 @@ class WebSocketService: ProjectComponent{
         super.disposeComponent()
         socketServer?.stop()
     }
+
+
 }

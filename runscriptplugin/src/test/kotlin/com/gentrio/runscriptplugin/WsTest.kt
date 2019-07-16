@@ -13,11 +13,13 @@ import java.net.URI
 fun main(args: Array<String>) {
 
     val hostAddress = InetAddress.getLocalHost().hostAddress
-    EmptyClient(URI("ws://$hostAddress:${Constants.WEBSOCKET_PORT}")).connect()
+    val header = hashMapOf<String, String>()
+    header.put("Device", "Xiaomi MIX 2S API 18")
+    EmptyClient(URI("ws://$hostAddress:${Constants.WEBSOCKET_PORT}"), header).connect()
 
 }
 
-class EmptyClient(uri: URI) : WebSocketClient(uri) {
+class EmptyClient(uri: URI, header: Map<String, String>) : WebSocketClient(uri, header) {
     override fun onOpen(handshakedata: ServerHandshake?) {
     }
 
