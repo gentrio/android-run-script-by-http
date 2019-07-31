@@ -5,7 +5,7 @@
 
     <description><![CDATA[
     RunScriptPlugin.<br>
-    <em>This is a plugin run script</em>
+    <em>This is a plugin run java script by http server</em>
     ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
