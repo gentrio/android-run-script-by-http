@@ -8,6 +8,7 @@
     <em>This is a plugin run java script by http server</em>
     ]]></description>
 
+    <idea-version since-build="171"/>
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
     <!-- uncomment to enable plugin in all products
