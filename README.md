@@ -6,3 +6,4 @@
 
 ### 使用方法：
 
+安装runscriptPlugin 插件
