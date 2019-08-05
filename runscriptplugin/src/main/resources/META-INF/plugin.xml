@@ -29,12 +29,19 @@
         <!-- Add your actions here -->
         <action
                 id="DeviceAction"
+                text="Device"
+                description="show active devices"
                 class="com.gentrio.runscriptplugin.action.DeviceComboAction"/>
         <action
                 id="RunScriptAction"
                 text="RunScript"
                 description="show run script toolWindow"
                 class="com.gentrio.runscriptplugin.action.RunScriptAction"/>
+        <action id="AdbActiveAction"
+                class="com.gentrio.runscriptplugin.action.AdbActiveAction"/>
+        <action
+                id="DeviceSelectAction"
+                class="com.gentrio.runscriptplugin.action.DeviceSelectAction"/>
         <group id="RunScriptToolBar" text="RunScript Toolbar Actions">
             <separator/>
             <reference ref="DeviceAction"/>
