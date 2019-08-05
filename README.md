@@ -108,5 +108,6 @@ USB连接：打开应用，USB调试连接PC，`系统环境变量需配置ADB` 
 ![](https://github.com/gentrio/android-run-script-by-websocket/blob/master/imgs/20190805134045.png)
 
 应用执行脚本：
+
 ![](https://github.com/gentrio/android-run-script-by-websocket/blob/master/imgs/20190805134230.png)
 
