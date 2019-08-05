@@ -85,11 +85,11 @@ public class RunScriptTest extends ScriptClassContext {
 
 无设备在线时：
 
-![](http://img.gentriolee.com/blog/20190801145424.png)
+![](https://github.com/gentrio/android-run-script-by-websocket/edit/master/imgs/20190801145424.png)
 
 USB连接：打开应用，USB调试连接PC，`系统环境变量需配置ADB` ，点击以下按钮，完成连接。
 
-![](http://img.gentriolee.com/blog/20190805133332.png)
+![](https://github.com/gentrio/android-run-script-by-websocket/edit/master/imgs/20190805133332.png)
 
 主动连接：打开应用，点击绿色悬浮窗，输入WebSocket地址：`ws://{PC IP地址}:8222`，点击确认完成连接。
 
@@ -97,7 +97,7 @@ USB连接：打开应用，USB调试连接PC，`系统环境变量需配置ADB` 
 
 设备在线时：
 
-![image-20190805133747747](/Users/gentrio/Library/Application Support/typora-user-images/image-20190805133747747.png)
+![](https://github.com/gentrio/android-run-script-by-websocket/edit/master/imgs/20190805134858.png)
 
 
 
@@ -105,7 +105,8 @@ USB连接：打开应用，USB调试连接PC，`系统环境变量需配置ADB` 
 
 `Android Studio` 打开执行脚本类，点击红色执行按钮，应用便会执行，执行结果会在控制台显示：
 
-![](http://img.gentriolee.com/blog/20190805134045.png)
+![](https://github.com/gentrio/android-run-script-by-websocket/edit/master/imgs/20190805134045.png)
 
 应用执行脚本：
-![](http://img.gentriolee.com/blog/20190805134230.png)
+![](https://github.com/gentrio/android-run-script-by-websocket/edit/master/imgs/20190805134230.png)
+
